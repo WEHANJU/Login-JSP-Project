@@ -29,4 +29,6 @@ replay_pid*
 
 # Database
 /config
-.properties
+db.properties
+
+/build
