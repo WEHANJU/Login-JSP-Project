@@ -10,4 +10,5 @@ public class EmployeeBean {
 	private String employeeEmail;		// 사원메일
 	private String employeePhone;		// 사원연락처
 	private Date employeeHiredate;		// 사원입사일
+	
 }
