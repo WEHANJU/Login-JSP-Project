@@ -8,10 +8,12 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 @WebServlet("/login")
 public class Login extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	
        
     public Login() {
         super();
@@ -24,27 +26,29 @@ public class Login extends HttpServlet {
 	public void destroy() {
 		System.out.println("Login end");
 	}
-
-	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-	}
-
-
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html;charset=UTF-8");
-		String id = request.getParameter("employeeId");
+		int id = Integer.parseInt(request.getParameter("employeeId"));
 		String pw = request.getParameter("employeePasswd");
-		Cookie cookie=null;
-		//로그인 성공하면 Cookie 생성되도록
-		//아이디가 비어있다면 => 사번을 입력하세요! alert창 띄우기
-		//비밀번호가 비어있다면 => 비밀번호를 입력하세요! alert창 띄우기
-		if(id==null) {
-			
+		HttpSession session=request.getSession();
+		
+		//DAO에서 받아온 id와 파라미터로 넘어온 id가 같고 DAO에서 받아온 pw와 파라미터로 넘어온 pw와 같으면 session 생성
+		if(id==124&&"1234".equals(pw)) {
+			session.setAttribute("emp", id);
+			request.getRequestDispatcher("views/main.jsp").forward(request, response);
 		}
-		if(id==EmployeeDAO.getId) {
-			cookie.add
+		else if((id==123&&!"".equals(pw)||(id!=123&&"".equals(pw)||(id!=123&&!"".equals(pw))))) {
+			response.sendRedirect("views/login.jsp");
+		}
+		else {
+			response.sendRedirect("views/login.jsp");
 		}
 	}
+	
+	
+
+	
 
 }
 
