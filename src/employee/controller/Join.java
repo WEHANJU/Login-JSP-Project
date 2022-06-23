@@ -44,8 +44,9 @@ public class Join extends HttpServlet {
 		String empPhone = request.getParameter("employeePhone");
 		Date empHireDate = java.sql.Date.valueOf(request.getParameter("employeeHireDate"));
 		
-		EmployeeBean = new EmployeeBean(empId,empPw, empNm, empAddr, empEmail, empPhone, empHireDate);
-		
+		EmployeeBean emplyeeBean= new EmployeeBean(empId,empPw, empNm, empAddr, empEmail, empPhone, empHireDate);
+		result = EmployeeDAO.insertEmployee(employeeBean);
+		System.out.println(result);
 		request.getRequestDispatcher("views/login.jsp").forward(request, response);
 		
 	}
