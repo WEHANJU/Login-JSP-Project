@@ -12,7 +12,7 @@
 		<div class="col-lg-4"></div>
 		<div class="col-lg-4">
 			<div class="jumbotron" style="padding-top: 20px;">
-				<form method="post" action="#">
+				<form method="post" action="../join">
 					<h3 style="text-align: center;">회원가입 화면</h3>
 					<div class="form-group">
 						<input type="text" class="form-control" placeholder="사원번호"
@@ -40,7 +40,7 @@
 					</div>
 					<div class="form-group">
 						<input type="date" class="form-control" placeholder="입사일"
-						 name="employeePhone" maxlength="20" />
+						 name="employeeHireDate" maxlength="20" />
 					</div>
 					<input type="submit" class="btn btn-primary form-control" value="회원가입" />
 				</form>

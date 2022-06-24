@@ -12,7 +12,7 @@
 		<div class="col-lg-4"></div>
 		<div class="col-lg-4">
 			<div class="jumbotron" style="padding-top: 20px;">
-				<form method="post" action="#">
+				<form method="post" action="../login">
 					<h3 style="text-align: center;">로그인 화면</h3>
 					<div class="form-group">
 						<input type="text" class="form-control" placeholder="아이디"
@@ -28,5 +28,5 @@
 		</div>
 		<div class="col-lg-4"></div>
 	</div>
-</body>
+</body>  
 </html>
