@@ -1,44 +1,35 @@
 package util;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.Properties;
+
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
+import javax.sql.DataSource;
 
 public class DBUtil {
-	static Properties propertiesInfo = new Properties();
+	static DataSource source = null;
+	
 	static {
-		try {
-			propertiesInfo.load(new FileInputStream("db.properties"));
-			Class.forName(propertiesInfo.getProperty("driver"));
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
+		try { 
+			Context initContext = new InitialContext();
+			Context envContext
+			= (Context) initContext.lookup("java:/comp/env");
+			source = (DataSource) envContext.lookup("jdbc/mysql");
+		} catch(NamingException e) {
+			e.printStackTrace(); // 
 		}
 	}
 	
 	public static Connection getConnection() throws SQLException {
-		System.out.println("DB연결 성공");
-		return DriverManager.getConnection(propertiesInfo.getProperty("dbUrl"),
-				propertiesInfo.getProperty("dbId"),
-				propertiesInfo.getProperty("dbPw"));
-				
+		return source.getConnection();
 	}
 	
-	public static void close(Connection conn, Statement stmt, ResultSet rs) {
+	public static void close(Statement stmt, Connection conn) {
 		try {
-			if(rs != null) {
-				rs.close();
-				rs = null;
-			}
 			if(stmt != null) {
 				stmt.close();
 				stmt = null;
@@ -48,12 +39,16 @@ public class DBUtil {
 				conn = null;
 			}
 		} catch(SQLException e) {
-			e.printStackTrace();
+			e.printStackTrace(); //
 		}
 	}
 	
-	public static void close(Connection conn, Statement stmt) {
+	public static void close(ResultSet rset, Statement stmt, Connection conn) {
 		try {
+			if(rset != null) {
+				rset.close();
+				rset = null;
+			}
 			if(stmt != null) {
 				stmt.close();
 				stmt = null;
@@ -63,7 +58,7 @@ public class DBUtil {
 				conn = null;
 			}
 		} catch(SQLException e) {
-			e.printStackTrace();
+			e.printStackTrace(); // 
 		}
 	}
 }
