@@ -3,110 +3,122 @@ package employee.model;
 import java.sql.Date;
 
 public class EmployeeBean {
-	
-	private int employeeId;				// »ç¿ø¹øÈ£
-	private String employeeName; 		// »ç¿øÀÌ¸§
-	private String employeePasswd;  	// ºñ¹Ğ¹øÈ£
-	private String employeeAddr;		// »ç¿øÁÖ¼Ò
-	private String employeeEmail;		// »ç¿ø¸ŞÀÏ
-	private String employeePhone;		// »ç¿ø¿¬¶ôÃ³
-	private Date employeeHiredate;		// »ç¿øÀÔ»çÀÏ
-	private String employeeWorkYN;		// »ç¿øÀçÁ÷À¯¹«
-	private int employeeAdminIdentify;	// °ü¸®ÀÚ½Äº°À¯¹«
-	private String employeeGrade;		// »ç¿øÁ÷±Ş
-	private String employeeImg;			// »ç¿øÀÌ¹ÌÁö
-	private int departmentId;			// ºÎ¼­¹øÈ£
-	
-	public EmployeeBean() {}
-	public EmployeeBean(int employeeId, String employeeName, String employeePasswd, String employeeAddr,
-			String employeeEmail, String employeePhone, Date employeeHiredate, String employeeWorkYN,
-			int employeeAdminIdentify, String employeeGrade, String employeeImg, int departmentId) {
-		super();
-		this.employeeId = employeeId;
-		this.employeeName = employeeName;
-		this.employeePasswd = employeePasswd;
-		this.employeeAddr = employeeAddr;
-		this.employeeEmail = employeeEmail;
-		this.employeePhone = employeePhone;
-		this.employeeHiredate = employeeHiredate;
-		this.employeeWorkYN = employeeWorkYN;
-		this.employeeAdminIdentify = employeeAdminIdentify;
-		this.employeeGrade = employeeGrade;
-		this.employeeImg = employeeImg;
-		this.departmentId = departmentId;
-	}
-	
-	public int getEmployeeId() {
-		return employeeId;
-	}
-	public void setEmployeeId(int employeeId) {
-		this.employeeId = employeeId;
-	}
-	public String getEmployeeName() {
-		return employeeName;
-	}
-	public void setEmployeeName(String employeeName) {
-		this.employeeName = employeeName;
-	}
-	public String getEmployeePasswd() {
-		return employeePasswd;
-	}
-	public void setEmployeePasswd(String employeePasswd) {
-		this.employeePasswd = employeePasswd;
-	}
-	public String getEmployeeAddr() {
-		return employeeAddr;
-	}
-	public void setEmployeeAddr(String employeeAddr) {
-		this.employeeAddr = employeeAddr;
-	}
-	public String getEmployeeEmail() {
-		return employeeEmail;
-	}
-	public void setEmployeeEmail(String employeeEmail) {
-		this.employeeEmail = employeeEmail;
-	}
-	public String getEmployeePhone() {
-		return employeePhone;
-	}
-	public void setEmployeePhone(String employeePhone) {
-		this.employeePhone = employeePhone;
-	}
-	public Date getEmployeeHiredate() {
-		return employeeHiredate;
-	}
-	public void setEmployeeHiredate(Date employeeHiredate) {
-		this.employeeHiredate = employeeHiredate;
-	}
-	public String getEmployeeWorkYN() {
-		return employeeWorkYN;
-	}
-	public void setEmployeeWorkYN(String employeeWorkYN) {
-		this.employeeWorkYN = employeeWorkYN;
-	}
-	public int getEmployeeAdminIdentify() {
-		return employeeAdminIdentify;
-	}
-	public void setEmployeeAdminIdentify(int employeeAdminIdentify) {
-		this.employeeAdminIdentify = employeeAdminIdentify;
-	}
-	public String getEmployeeGrade() {
-		return employeeGrade;
-	}
-	public void setEmployeeGrade(String employeeGrade) {
-		this.employeeGrade = employeeGrade;
-	}
-	public String getEmployeeImg() {
-		return employeeImg;
-	}
-	public void setEmployeeImg(String employeeImg) {
-		this.employeeImg = employeeImg;
-	}
-	public int getDepartmentId() {
-		return departmentId;
-	}
-	public void setDepartmentId(int departmentId) {
-		this.departmentId = departmentId;
-	}	
-	
+   
+   private int employeeId;            // ì‚¬ì›ë²ˆí˜¸
+   private String employeeName;       // ì‚¬ì›ì´ë¦„
+   private String employeePasswd;     // ë¹„ë°€ë²ˆí˜¸
+   private String employeeAddr;      // ì‚¬ì›ì£¼ì†Œ
+   private String employeeEmail;      // ì‚¬ì›ë©”ì¼
+   private String employeePhone;      // ì‚¬ì›ì—°ë½ì²˜
+   private Date employeeHiredate;      // ì‚¬ì›ì…ì‚¬ì¼
+   private String employeeWorkYN;      // ì‚¬ì›ì¬ì§ìœ ë¬´
+   private int employeeAdminIdentify;   // ê´€ë¦¬ìì‹ë³„ìœ ë¬´
+   private String employeeGrade;      // ì‚¬ì›ì§ê¸‰
+   private String employeeImg;         // ì‚¬ì›ì´ë¯¸ì§€
+   private int departmentId;         // ë¶€ì„œë²ˆí˜¸
+   
+   public EmployeeBean() {}
+   public EmployeeBean(int employeeId, String employeeName, String employeePasswd, String employeeAddr,
+         String employeeEmail, String employeePhone, Date employeeHiredate, String employeeWorkYN,
+         int employeeAdminIdentify, String employeeGrade, String employeeImg, int departmentId) {
+      super();
+      this.employeeId = employeeId;
+      this.employeeName = employeeName;
+      this.employeePasswd = employeePasswd;
+      this.employeeAddr = employeeAddr;
+      this.employeeEmail = employeeEmail;
+      this.employeePhone = employeePhone;
+      this.employeeHiredate = employeeHiredate;
+      this.employeeWorkYN = employeeWorkYN;
+      this.employeeAdminIdentify = employeeAdminIdentify;
+      this.employeeGrade = employeeGrade;
+      this.employeeImg = employeeImg;
+      this.departmentId = departmentId;
+   }
+//   empId,empPw, empNm, empAddr, empEmail, empPhone, empHireDate
+   public EmployeeBean(int employeeId, String employeePasswd, String employeeName, String employeeAddr,
+         String employeeEmail, String employeePhone, Date employeeHiredate) {
+      super();
+      this.employeeId = employeeId;
+      this.employeePasswd = employeePasswd;
+      this.employeeName = employeeName;
+      this.employeeAddr = employeeAddr;
+      this.employeeEmail = employeeEmail;
+      this.employeePhone = employeePhone;
+      this.employeeHiredate = employeeHiredate;
+   }
+   
+   public int getEmployeeId() {
+      return employeeId;
+   }
+   public void setEmployeeId(int employeeId) {
+      this.employeeId = employeeId;
+   }
+   public String getEmployeeName() {
+      return employeeName;
+   }
+   public void setEmployeeName(String employeeName) {
+      this.employeeName = employeeName;
+   }
+   public String getEmployeePasswd() {
+      return employeePasswd;
+   }
+   public void setEmployeePasswd(String employeePasswd) {
+      this.employeePasswd = employeePasswd;
+   }
+   public String getEmployeeAddr() {
+      return employeeAddr;
+   }
+   public void setEmployeeAddr(String employeeAddr) {
+      this.employeeAddr = employeeAddr;
+   }
+   public String getEmployeeEmail() {
+      return employeeEmail;
+   }
+   public void setEmployeeEmail(String employeeEmail) {
+      this.employeeEmail = employeeEmail;
+   }
+   public String getEmployeePhone() {
+      return employeePhone;
+   }
+   public void setEmployeePhone(String employeePhone) {
+      this.employeePhone = employeePhone;
+   }
+   public Date getEmployeeHiredate() {
+      return employeeHiredate;
+   }
+   public void setEmployeeHiredate(Date employeeHiredate) {
+      this.employeeHiredate = employeeHiredate;
+   }
+   public String getEmployeeWorkYN() {
+      return employeeWorkYN;
+   }
+   public void setEmployeeWorkYN(String employeeWorkYN) {
+      this.employeeWorkYN = employeeWorkYN;
+   }
+   public int getEmployeeAdminIdentify() {
+      return employeeAdminIdentify;
+   }
+   public void setEmployeeAdminIdentify(int employeeAdminIdentify) {
+      this.employeeAdminIdentify = employeeAdminIdentify;
+   }
+   public String getEmployeeGrade() {
+      return employeeGrade;
+   }
+   public void setEmployeeGrade(String employeeGrade) {
+      this.employeeGrade = employeeGrade;
+   }
+   public String getEmployeeImg() {
+      return employeeImg;
+   }
+   public void setEmployeeImg(String employeeImg) {
+      this.employeeImg = employeeImg;
+   }
+   public int getDepartmentId() {
+      return departmentId;
+   }
+   public void setDepartmentId(int departmentId) {
+      this.departmentId = departmentId;
+   }   
+   
 }

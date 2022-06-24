@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import util.DBUtil;
 
 public class EmployeeDAO {
-	// »ç¿øµî·Ï
+	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	public static boolean insertEmployee(EmployeeBean vo) throws SQLException{
 		Connection conn = null;	
 		PreparedStatement pstmt = null;
@@ -38,7 +38,7 @@ public class EmployeeDAO {
 		return result;		
 	}
 	
-	// »ç¿øÁ¶È¸ - employee_id ±âÁØ
+	// ï¿½ï¿½ï¿½ï¿½ï¿½È¸ - employee_id ï¿½ï¿½ï¿½ï¿½
 	public static EmployeeBean getEmployee(int employeeId) throws SQLException {		
 		Connection conn = null;	
 		PreparedStatement pstmt = null;
@@ -54,10 +54,10 @@ public class EmployeeDAO {
 			rset = pstmt.executeQuery();
 			
 			if(rset.next()){
-				vo = new EmployeeBean(employeeId, rset.getString(1),
-						rset.getString(2),rset.getString(3),rset.getString(4),
-						rset.getString(5),rset.getDate(6),rset.getString(7), 
-						rset.getInt(8), rset.getString(9), rset.getString(10), rset.getInt(11));
+				vo = new EmployeeBean(employeeId, rset.getString(2),
+						rset.getString(3),rset.getString(4),rset.getString(5),
+						rset.getString(6),rset.getDate(7),rset.getString(8), 
+						rset.getInt(9), rset.getString(10), rset.getString(11), rset.getInt(12));
 			}
 		} finally{
 			DBUtil.close(pstmt, conn);
@@ -65,7 +65,7 @@ public class EmployeeDAO {
 		return vo;
 	} 
 	
-	// ¸ðµç»ç¿øÁ¶È¸
+	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¸
 	public static ArrayList<EmployeeBean> getAllEmployee() throws SQLException {
 		Connection conn = null;	
 		PreparedStatement pstmt = null;
