@@ -2,6 +2,7 @@ package employee.controller;
 
 import java.io.IOException;
 import java.sql.Date;
+import java.sql.SQLException;
 
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
@@ -9,6 +10,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import employee.model.EmployeeBean;
+import employee.model.EmployeeDAO;
 
 
 @WebServlet("/join")
@@ -44,9 +48,15 @@ public class Join extends HttpServlet {
 		String empPhone = request.getParameter("employeePhone");
 		Date empHireDate = java.sql.Date.valueOf(request.getParameter("employeeHireDate"));
 		
-		EmployeeBean emplyeeBean= new EmployeeBean(empId,empPw, empNm, empAddr, empEmail, empPhone, empHireDate);
-		result = EmployeeDAO.insertEmployee(employeeBean);
-		System.out.println(result);
+		EmployeeBean employeeBean= new EmployeeBean(empId,empPw, empNm, empAddr, empEmail, empPhone, empHireDate);
+		boolean result;
+		try {
+			result = EmployeeDAO.insertEmployee(employeeBean);
+			System.out.println(result);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
 		request.getRequestDispatcher("views/login.jsp").forward(request, response);
 		
 	}
