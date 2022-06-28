@@ -2,11 +2,11 @@ USE wehanju;
 
 -- employee table insert
 INSERT INTO employee(employee_id, employee_name, employee_passwd, employee_addr, employee_email, employee_phone, employee_hiredate)
-VALUES(371229, "¹ÚÇÑÁÖ", "950116", "ºÎ»ê½Ã »çÇÏ±¸", "parkhanju95@gmail.com", "010-4116-9516", now());
+VALUES(371229, "ë°•í•œì£¼", "950116", "ë¶€ì‚°ì‹œ ì‚¬í•˜êµ¬", "parkhanju95@gmail.com", "010-4116-9516", now());
 INSERT INTO employee(employee_id, employee_name, employee_passwd, employee_addr, employee_email, employee_phone, employee_hiredate)
-VALUES(371230, "°û¿¹¿µ", "970829", "ºÎ»ê½Ã µ¿·¡±¸", "yeyeongkwak@gmail.com", "010-9436-0575", now());
+VALUES(371230, "ê³½ì˜ˆì˜", "970829", "ë¶€ì‚°ì‹œ ë™ë˜êµ¬", "yeyeongkwak@gmail.com", "010-9436-0575", now());
 INSERT INTO employee(employee_id, employee_name, employee_passwd, employee_addr, employee_email, employee_phone, employee_hiredate)
-VALUES(371231, "±è¹Î±Ô", "950714", "ºÎ»ê½Ã ³²±¸", "gyu0714@gmail.com", "010-1111-1111", now());
+VALUES(371231, "ê¹€ë¯¼ê·œ", "950714", "ë¶€ì‚°ì‹œ ë‚¨êµ¬", "gyu0714@gmail.com", "010-3777-3472", now());
 
 COMMIT;
 
